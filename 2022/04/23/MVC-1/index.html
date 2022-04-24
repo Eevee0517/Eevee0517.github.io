@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>MVC(1)--登录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="我们做的是一个基于三层的MVC项目 来完成网页基本的增删查改">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC(1)--登录">
+<meta property="og:url" content="http://example.com/2022/04/23/MVC-1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我们做的是一个基于三层的MVC项目 来完成网页基本的增删查改">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-fb31bef306d86b52e533258c8c8d2c9c_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-52e8603c450be661f63fd87eaf165f68_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-ad2627e44203c6b7906b7e628b5686a6_r.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-45b4dd2c61dd16e0e5caed878245da7f_1440w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-33dee16fc203ad9b0d7981e011a441fb_1440w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-7c2bc27e88345d3a429df37db79c7836_1440w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-e67d83b731c2e34e644780a579b19a32_r.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-a94c635416fa4b4add8d68553666a806_r.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-47c2ef6185f11466f9dbc2d1d81d6ddd_1440w.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-befcd0245add09890d94adc01212af19_b.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/v2-7a3991744b59b2934a78ca595b07f1ea_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-96e925b656610b9da373362ff6487ab3_r.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-c8140bd2e26c6673066ec1bb86292c18_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-1ae1e57430964a1a75f655c51a57c887_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-7b633200628cb83327c3b0e0ac9202bb_b.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-e6a0b58547d319cbf005d66940d4921d_b.jpg">
+<meta property="article:published_time" content="2022-04-23T04:44:22.000Z">
+<meta property="article:modified_time" content="2022-04-24T03:50:23.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic1.zhimg.com/v2-fb31bef306d86b52e533258c8c8d2c9c_r.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-MVC-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/04/23/MVC-1/" class="article-date">
+  <time class="dt-published" datetime="2022-04-23T04:44:22.000Z" itemprop="datePublished">2022-04-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/MVC/">MVC</a>►<a class="article-category-link" href="/categories/MVC/%E7%99%BB%E5%BD%95/">登录</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MVC(1)--登录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我们做的是一个基于三层的MVC项目 来完成网页基本的增删查改</p>
+<span id="more"></span> 
+<h1 id="MVC的增删查改-登录"><a href="#MVC的增删查改-登录" class="headerlink" title="MVC的增删查改 登录"></a>MVC的增删查改 登录</h1><h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>首先我们先根据图片要求创建一个数据库<br><img src="https://pic1.zhimg.com/v2-fb31bef306d86b52e533258c8c8d2c9c_r.jpg" alt="Emp数据库条件"> </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--进入系统数据库master</span></span><br><span class="line">use master</span><br><span class="line">go </span><br><span class="line"><span class="comment">--判断数据Emp是否存在，如果存在，就删除</span></span><br><span class="line">if <span class="keyword">exists</span>(<span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> sysdatabases <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;Emp&#x27;</span>)</span><br><span class="line">	<span class="keyword">drop</span> database Emp</span><br><span class="line">go </span><br><span class="line"><span class="comment">--创建数据库</span></span><br><span class="line"><span class="keyword">create</span> database Emp</span><br><span class="line">go</span><br><span class="line"><span class="comment">--进入你创建的数据库</span></span><br><span class="line">use Emp </span><br><span class="line">go</span><br><span class="line"><span class="comment">--创建表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Emplorer</span><br><span class="line">(</span><br><span class="line">UserID <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span> <span class="keyword">identity</span>(<span class="number">1</span>,<span class="number">1</span>) <span class="keyword">primary</span> key,</span><br><span class="line">Account <span class="type">Varchar</span>(<span class="number">200</span>),</span><br><span class="line">Password <span class="type">Varchar</span>(<span class="number">50</span>),</span><br><span class="line">UserName <span class="type">Varchar</span>(<span class="number">50</span>),</span><br><span class="line">Address <span class="type">Varchar</span>(<span class="number">200</span>),</span><br><span class="line">Sex <span class="type">int</span> <span class="keyword">not</span> <span class="keyword">null</span></span><br><span class="line">)</span><br><span class="line">go</span><br><span class="line"><span class="comment">--添加数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Emplorer(Account,Password,UserName,Address,Sex)<span class="keyword">values</span>(<span class="string">&#x27;admin&#x27;</span>,<span class="string">&#x27;123&#x27;</span>,<span class="string">&#x27;张三&#x27;</span>,<span class="string">&#x27;地球&#x27;</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Emplorer(Account,Password,UserName,Address,Sex)<span class="keyword">values</span>(<span class="string">&#x27;user&#x27;</span>,<span class="string">&#x27;321&#x27;</span>,<span class="string">&#x27;李四&#x27;</span>,<span class="string">&#x27;火星&#x27;</span>,<span class="number">2</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Emplorer(Account,Password,UserName,Address,Sex)<span class="keyword">values</span>(<span class="string">&#x27;aaa&#x27;</span>,<span class="string">&#x27;123&#x27;</span>,<span class="string">&#x27;王五&#x27;</span>,<span class="string">&#x27;木星&#x27;</span>,<span class="number">1</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> Emplorer(Account,Password,UserName,Address,Sex)<span class="keyword">values</span>(<span class="string">&#x27;bbb&#x27;</span>,<span class="string">&#x27;321&#x27;</span>,<span class="string">&#x27;老六&#x27;</span>,<span class="string">&#x27;金星&#x27;</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="打开编译器VS搭建三层框架"><a href="#打开编译器VS搭建三层框架" class="headerlink" title="打开编译器VS搭建三层框架"></a>打开编译器VS搭建三层框架</h2><p>先创建新的ASP.NET Web应用程序(.NET Framework)项目取名Emplorer(名称自己选)</p>
+<p>选择MVC进行创建</p>
+<p>然后右键解决方案 &#x3D;》添加 &#x3D;》 新建项目 &#x3D;》 类库</p>
+<p>此处应该注意：</p>
+<p>①一定是右键 <strong>解决方案</strong> 而不是右键项目名来进行添加<br><img src="https://pic1.zhimg.com/v2-52e8603c450be661f63fd87eaf165f68_r.jpg" alt="注意事项"><br>②不同版本的VS 他的类库种类不一样 此处我们选择的类库是 <strong>类库(.NET Fromwork)</strong><br><img src="https://pic3.zhimg.com/v2-ad2627e44203c6b7906b7e628b5686a6_r.jpg" alt="注意事项"><br>用以上方法分别建立 DAL BLL Model三个类库 并将其中的所有生成的类给删除</p>
+<p>然后开始添加引用</p>
+<p>点击DAL &#x3D;》右键引用 &#x3D;》添加引用 &#x3D;》点击项目 &#x3D;》点击Model &#x3D;》点击确定</p>
+<p>点击BLL &#x3D;》 右键引用 &#x3D;》添加引用 &#x3D;》 点击项目 &#x3D;》点击DAL和Model &#x3D;》点击确定</p>
+<p>点击Emplorer(也叫UI层和MVC层)&#x3D;》 右键引用 &#x3D;》添加引用 &#x3D;》 点击项目 &#x3D;》点击BLL和Model &#x3D;》点击确定</p>
+<p>注意：因为Model是用来传递数据的 所以每一个层都要引用它</p>
+<p>然后我们要创建一个类用来引用数据库</p>
+<p>右键点击DAL &#x3D;》 添加 &#x3D;》类 &#x3D;》名称叫 DBHelper</p>
+<p>首先我们再class前添加public 然后添加以下代码</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> 更新操作：增，删，改 共用</span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;sql&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>bool<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">bool</span> <span class="title">UpdateOpera</span>(<span class="params"><span class="built_in">string</span> sql, <span class="keyword">params</span> SqlParameter[] sps</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, Connection);</span><br><span class="line">           cmd.Parameters.AddRange(sps);</span><br><span class="line">           <span class="keyword">return</span> cmd.ExecuteNonQuery() &gt; <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> 多行查询操作：返回SqlDataReader</span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;sql&quot;&gt;</span>查询SQL语句<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>SqlDataReader<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> SqlDataReader <span class="title">GetReader</span>(<span class="params"><span class="built_in">string</span> sql</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, Connection);</span><br><span class="line">           <span class="keyword">return</span> cmd.ExecuteReader(CommandBehavior.CloseConnection);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> 多行查询操作：返回DataTable</span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;sql&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DataTable <span class="title">GetDataTable</span>(<span class="params"><span class="built_in">string</span> sql</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           DataTable dt = <span class="keyword">new</span> DataTable();</span><br><span class="line">           SqlDataAdapter dad = <span class="keyword">new</span> SqlDataAdapter(sql, Connection);</span><br><span class="line">           dad.Fill(dt);</span><br><span class="line">           <span class="keyword">return</span> dt;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> 查询操作：返回首行首列数据</span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;sql&quot;&gt;</span>查询SQL语句<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>object<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">object</span> <span class="title">GetScalar</span>(<span class="params"><span class="built_in">string</span> sql</span>)</span></span><br><span class="line">       &#123;</span><br><span class="line">           SqlCommand cmd = <span class="keyword">new</span> SqlCommand(sql, Connection);</span><br><span class="line">           <span class="keyword">return</span> cmd.ExecuteScalar();</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">private</span> <span class="keyword">static</span> SqlConnection _connection;</span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> Connection对象</span></span><br><span class="line">       <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> SqlConnection Connection</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">get</span></span><br><span class="line">           &#123;</span><br><span class="line">               <span class="comment">//Data Source=.;Initial Catalog=StuDB;Persist Security Info=True;Integrated Security=True</span></span><br><span class="line">               <span class="built_in">string</span> connectionString = System.Configuration.ConfigurationManager.ConnectionStrings[<span class="string">&quot;SqlConnStr&quot;</span>].ConnectionString;</span><br><span class="line">               <span class="keyword">if</span> (_connection == <span class="literal">null</span>)</span><br><span class="line">               &#123;</span><br><span class="line">                   _connection = <span class="keyword">new</span> SqlConnection(connectionString);</span><br><span class="line">                   _connection.Open();</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span> <span class="keyword">if</span> (_connection.State == ConnectionState.Closed)</span><br><span class="line">               &#123;</span><br><span class="line">                   _connection.Open();</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span> <span class="keyword">if</span> (_connection.State == ConnectionState.Broken || _connection.State == ConnectionState.Open)</span><br><span class="line">               &#123;</span><br><span class="line">                   _connection.Close();</span><br><span class="line">                   _connection.Open();</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">return</span> _connection;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>当你添加完后会发现有报错的现象，这时候我们应该点击bug处点灯泡添加引用</p>
+<p>添加完两个using后 发现还剩下最后一处bug了</p>
+<p>此处bug是一个在config里面配置的一个connection</p>
+<p>接下来我们就点击项目名Emplorer &#x3D;》找到Web.config 并点击它</p>
+<p>然后我们在进行添加连接字符串connectionStrings<br><img src="https://pic4.zhimg.com/80/v2-45b4dd2c61dd16e0e5caed878245da7f_1440w.jpg" alt="连接数据库"><br>其中在<add>里面的name 是<br><img src="https://pic4.zhimg.com/80/v2-33dee16fc203ad9b0d7981e011a441fb_1440w.jpg" alt="连接数据库"><br>connectionString是 点击工具 &#x3D;》连接到数据库<br><img src="https://pic3.zhimg.com/80/v2-7c2bc27e88345d3a429df37db79c7836_1440w.jpg" alt="连接数据库"><br><img src="https://pic3.zhimg.com/v2-e67d83b731c2e34e644780a579b19a32_r.jpg" alt="连接数据库"><br><img src="https://pic3.zhimg.com/v2-a94c635416fa4b4add8d68553666a806_r.jpg" alt="连接数据库"><br>最后在进行添加Configuration引用</p>
+<p>因为我们是在DAL当中，所以是在DAL里面进行添加</p>
+<p>点击DAL &#x3D;》 右键引用 &#x3D;》添加引用 &#x3D;》点击程序集 &#x3D;》找到并点击system.Configuration&#x3D;》点击确定<br><img src="https://pic2.zhimg.com/80/v2-47c2ef6185f11466f9dbc2d1d81d6ddd_1440w.jpg" alt="连接数据库"><br>右键解决方案 &#x3D;》重新生成解决方案</p>
+<p>如果此时没有红线或者红点表示bug暂时没有</p>
+<p>接下来我们就在Model层里面 <strong>有几张表就封装几个类</strong></p>
+<p>因为我们现在的数据库里面只有一个表Emplorer所以现在只需要封装一个类名字叫EmplorerModel</p>
+<p>然后在class前添加public  最后就是来封装了</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> <span class="title">MODEL</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">EmplorerModel</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//这是把数据库里面的字段拉过来方便我们去封装</span></span><br><span class="line">        <span class="comment">//UserID int not null identity(1,1) primary key,</span></span><br><span class="line">        <span class="comment">//Account Varchar(200),</span></span><br><span class="line">        <span class="comment">//Password Varchar(50),</span></span><br><span class="line">        <span class="comment">//UserName Varchar(50),</span></span><br><span class="line">        <span class="comment">//Address Varchar(200),</span></span><br><span class="line">        <span class="comment">//Sex int not null</span></span><br><span class="line">        <span class="comment">//这里有一个快捷键prop+tab键自动生成然后进行修改</span></span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> UserID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Account &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Address &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> Password &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">string</span> UserName &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> Sex &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到了这里，我们的准备工作已经完成了。接下来就是要开始做登录了</p>
+<h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><h3 id="登录页面的制作"><a href="#登录页面的制作" class="headerlink" title="登录页面的制作"></a>登录页面的制作</h3><p>首先我们在项目的Controllers里添加一个控制器<br><img src="https://pic2.zhimg.com/v2-befcd0245add09890d94adc01212af19_b.jpg" alt="登陆页面"><br>选择空的控制器进行添加<br><img src="https://pic3.zhimg.com/v2-7a3991744b59b2934a78ca595b07f1ea_b.jpg" alt="登陆页面"><br>注意：<strong>添加的时候名字的创建 只能修改 Controller 前面的字段 不要进行不必要的修改</strong></p>
+<p>然后我们将名字改成LoginController 点击添加<br><img src="https://pic4.zhimg.com/v2-96e925b656610b9da373362ff6487ab3_r.jpg" alt="登陆页面"><br>然后我们来添加页面</p>
+<p>点击Index &#x3D;》选中后右击 &#x3D;》点添加视图<br><img src="https://pic1.zhimg.com/v2-c8140bd2e26c6673066ec1bb86292c18_b.jpg" alt="登陆页面"><br>&#x3D;》选择视图添加<br><img src="https://pic4.zhimg.com/v2-1ae1e57430964a1a75f655c51a57c887_b.jpg" alt="登陆页面"><br>&#x3D;》选项都不进行勾选 &#x3D;》点击添加<br><img src="https://pic4.zhimg.com/v2-7b633200628cb83327c3b0e0ac9202bb_b.jpg" alt="登陆页面"><br>然后我们就可以在Views文件夹中的Login文件夹里找到我们刚刚建好的Index视图</p>
+<p>然后开始建造我们的登录页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">            登陆页面</span><br><span class="line">        <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;account&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>密 码：<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;pwd&quot;</span> <span class="attr">value</span>=<span class="string">&quot;&quot;</span> /&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">button</span>&gt;</span>登录<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当我们的页面搭建完后，这时我们就可以开始走三层了</p>
+<h3 id="登录的DAL语句"><a href="#登录的DAL语句" class="headerlink" title="登录的DAL语句"></a>登录的DAL语句</h3><p>先走DAL调用数据库 那么DAL调用数据库 你要控制哪一张表 那么你就建一张这个表的类</p>
+<p>因为我们现在只有Employrer一张表所以我们只需要建一个叫EmplorerDAL的类来控制它</p>
+<p>右击DAL &#x3D;》添加 &#x3D;》新建项 &#x3D;》选择类 &#x3D;》名字改成EmplorerDAL &#x3D;》点击添加</p>
+<p>首先第一步就是在class前添加public</p>
+<p>然后进行代码的敲写</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为我们封装了类所以我们用实体类传输数据的方式</span></span><br><span class="line"><span class="comment">//所以括号里的是MODEL实体类里的EmplorerModel 然后我们给他一个名字叫做emp</span></span><br><span class="line"><span class="comment">//这样我们就可以拿到emp里的所有字段</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> DataTable <span class="title">Login</span>(<span class="params">MODEL.EmplorerModel emp</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//string sql = @&quot;&quot;这里是数据库里的查询语句&quot;</span></span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">@&quot;select UserID,Account,Password,UserName,Address,Sex from Emplorer</span></span><br><span class="line"><span class="string">                            where Account = &#x27;&quot;</span> + emp.Account + <span class="string">&quot;&#x27; and Password = &#x27;&quot;</span> + emp.Password + <span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">            DataTable dt = DBHelper.GetDataTable(sql);</span><br><span class="line">            <span class="keyword">return</span> dt;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>但是因为我们最终想要得到的数据是list而不是DataTable</p>
+<p>DataTable非常不灵活，所以我们就要利用一个方法把dt转成我们需要的List</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;MODEL.EmplorerModel&gt; GetList(DataTable dt) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//序列化成json字符串,需要引用newtonsoft</span></span><br><span class="line">            <span class="built_in">string</span> JsonStr =  JsonConvert.SerializeObject(dt);</span><br><span class="line">            <span class="comment">//反序列化成list</span></span><br><span class="line">            List&lt;MODEL.EmplorerModel&gt; list = JsonConvert.DeserializeObject&lt;List&lt;MODEL.EmplorerModel&gt;&gt;(JsonStr);</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>其中引用newtonsoft需要自己找 此处可以参考网上的教程<a target="_blank" rel="noopener" href="https://www.cnblogs.com/obge/p/15601889.html">引用newtonsoft</a></p>
+<p>然后我们就可以对Login进行修改</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;MODEL.EmplorerModel&gt; Login(MODEL.EmplorerModel emp)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> sql = <span class="string">@&quot;select UserID,Account,Password,UserName,Address,Sex from Emplorer</span></span><br><span class="line"><span class="string">                            where Account = &#x27;&quot;</span> + emp.Account + <span class="string">&quot;&#x27; and Password = &#x27;&quot;</span> + emp.Password + <span class="string">&quot;&#x27;&quot;</span>;</span><br><span class="line">            DataTable dt = DBHelper.GetDataTable(sql);</span><br><span class="line">            <span class="keyword">return</span> GetList(dt);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="登录的BLL语句"><a href="#登录的BLL语句" class="headerlink" title="登录的BLL语句"></a>登录的BLL语句</h3><p>我们先在BLL里面添加新的类名字就叫EmplorerBLL（创建方式参考上文DAL的创建）</p>
+<p>然后还是一样的现在class前添加public</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> List&lt;MODEL.EmplorerModel&gt; Login(MODEL.EmplorerModel emp)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">return</span> DAL.EmplorerDAL.Login(emp);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="控制器的登录语句"><a href="#控制器的登录语句" class="headerlink" title="控制器的登录语句"></a>控制器的登录语句</h3><p>这是我们就要对controllers里面的Logincontroller进行添加</p>
+<p>首先我们得有一个Index页面处理的方法</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">IndexExe</span>()</span></span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">return</span> View();<span class="comment">//先不让它报错</span></span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们再回到页面上去</p>
+<p>因为我们在页面上输入了账号密码，点击了button后我们是要将数据传到我们的处理方法上</p>
+<p>所以我们再<br><img src="https://pic2.zhimg.com/v2-e6a0b58547d319cbf005d66940d4921d_b.jpg" alt="登陆页面"></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">IndexExe</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//新建两个对象来获取页面上的账号密码</span></span><br><span class="line">            <span class="built_in">string</span> account = Request.Form[<span class="string">&quot;account&quot;</span>];</span><br><span class="line">            <span class="built_in">string</span> pwd = Request.Form[<span class="string">&quot;pwd&quot;</span>];</span><br><span class="line">            <span class="comment">//实体类传递数据 ， 一定有一个实体类</span></span><br><span class="line">            MODEL.EmplorerModel emp = <span class="keyword">new</span> MODEL.EmplorerModel()</span><br><span class="line">            &#123;</span><br><span class="line">                Account = account,</span><br><span class="line">                Password = pwd</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="comment">//调用BLL</span></span><br><span class="line">            List&lt;MODEL.EmplorerModel&gt; list = BLL.EmplorerBLL.Login(emp);</span><br><span class="line">            <span class="comment">//判断</span></span><br><span class="line">            <span class="keyword">if</span> (list.Count &gt; <span class="number">0</span> ) &#123;</span><br><span class="line">                <span class="comment">//跳转到显示页面</span></span><br><span class="line">                <span class="keyword">return</span> Redirect(<span class="string">&quot;/Emp/Index&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//用户名或密码错误</span></span><br><span class="line">                <span class="keyword">return</span> Content(<span class="string">&quot;用户名或密码错误&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>因为我们还没有页面所以我们再敲完后再到Controllers里新建一个EmpController</p>
+<p>并添加视图 使我们登录完可以经行页面跳转</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/23/MVC-1/" data-id="cl2d5xogg00002gw38oeh32ct" data-title="MVC(1)--登录" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/">MVC</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/MVC/%E7%99%BB%E5%BD%95/">登录</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag">前端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 10px;">前端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/23/MVC-1/">MVC(1)--登录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
